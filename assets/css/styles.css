@@ -1,0 +1,19 @@
+.container {
+  width: 960px;
+  margin: 0 auto;
+}
+
+.project {
+  position: relative;
+  display: inline-block;
+  margin: 20px 0px 0px 20px;
+  width: 30%;
+  padding-bottom: 30%;
+  overflow: hidden;
+}
+
+img {
+  position: absolute;
+  left: -50%;
+  top: -50%;
+}
