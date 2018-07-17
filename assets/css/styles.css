@@ -2,6 +2,10 @@
 
 html, body {
   margin: 0;
+}
+
+body {
+  background-color: #fcfcfc;
   font-family: 'Nunito', sans-serif;
   color: #111;
 }
@@ -13,30 +17,32 @@ html, body {
 }
 
 header {
-  padding: 50px 0px 25px 0px;
+  padding: 48px 0px 48px 0px;
 }
 
 footer {
-  padding: 100px 0px 50px 0px;
+  padding: 76px 0px 50px 0px;
   text-align: center;
 }
 
 .menu {
   text-align: center;
   margin: 0 auto;
-  padding-top: 25px;
+  padding-top: 12px;
 }
 
 .menu a {
   margin-right: 10px;
 }
 
+.menu a:last-child {
+  margin-right: 0px;
+}
+
 a {
   color: #999;
   text-decoration: none;
 }
-
-
 
 a.active {
   color: #111;
@@ -63,14 +69,10 @@ div {
   position: relative;
   display: inline-block;
   margin-left: 2%;
-  margin-top: 2%;
+  margin-bottom: 2%;
   width: 30.5%;
   padding-bottom: 30.5%;
   overflow: hidden;
-}
-
-.project:first-child {
-  padding-left: 0px;
 }
 
 .project:nth-child(4n) {
@@ -96,30 +98,70 @@ div {
   opacity: 0.5;
 }
 
-@media (max-width: 768px) {
-  .project {
-    /* margin-left: 2%;
-    margin-top: 2%; */
-    width: 45%;
-    padding-bottom: 45%;
-  }
-  .container {
-    width: 100%;
-    max-width: 768px;
-    margin: 0 auto;
-  }
+.col-left {
+  display: inline-block;
+  vertical-align: top;
+  width: 25%;
+  float: right;
+}
+
+.col-right {
+  display: inline-block;
+  vertical-align: top;
+  width: 70%;
+  margin-right: 4%;
+}
+
+.col-left img, .col-right img {
+  width: 100%;
+  margin-bottom: 24px;
+}
+
+h2 {
+  margin-top: 0px;
 }
 
 @media (max-width: 768px) {
   .project {
-    /* margin-left: 2%;
-    margin-top: 2%; */
+    width: 46.7%;
+    padding-bottom: 46.7%;
+  }
+
+  .container {
+    width: 100%;
+    max-width: 768px;
+    margin: 0 auto;
+    padding: 0 36px;
+  }
+
+  .col-left {
+    display: block;
+    width: 100%;
+  }
+
+  .col-right {
+    float: top;
+    display: block;
+    width: 100%;
+  }
+}
+
+@media (max-width: 411px) {
+  .project {
+    margin-left: 0;
+    margin-bottom: 15px;
     width: 100%;
     padding-bottom: 100%;
   }
+
   .container {
     width: 100%;
     max-width: 360px;
     margin: 0 auto;
+    padding: 0 16px;
+  }
+
+  .menu a {
+    margin-right: 2px;
   }
 }
