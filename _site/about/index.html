@@ -10,7 +10,7 @@
     <div class='logo'>
       
       <a href='/'>
-        <img src=/assets/images/logo.png>
+        <img src=>
       </a>
     </div>
     <div class='menu'>
@@ -44,6 +44,17 @@
 </article>
 <footer>
   All images © Natalia Anisimova 2018
-</footer></body>
+</footer><script>
+    if (window.netlifyIdentity) {
+      window.netlifyIdentity.on("init", function(user) {
+        if (!user) {
+          window.netlifyIdentity.on("login", function() {
+            document.location.href = "/admin/";
+          });
+        }
+      });
+    }
+  </script>
+  </body>
 
 </html>
