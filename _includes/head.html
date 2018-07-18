@@ -4,6 +4,19 @@
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <script src="https://identity.netlify.com/v1/netlify-identity-widget.js"></script>
 
+  <script>
+    document.addEventListener('DOMContentLoaded', function() {
+      var menuLinks = document.getElementsByClassName('menu')[0]
+        .getElementsByTagName('a');
+
+      Array.from(menuLinks).forEach(function(link, i) {
+        if (window.location.pathname === link.pathname) {
+          link.classList.add('active');
+        }
+      });
+    });
+  </script>
+
   <link rel="stylesheet" href="{{ "/assets/main.css" | relative_url }}">
   {%- feed_meta -%}
   {%- if jekyll.environment == 'production' and site.google_analytics -%}
