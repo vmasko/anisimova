@@ -2,9 +2,6 @@
   <nav>
     <div class='logo'>
       {% assign image_files = site.static_files | where: "image", true %}
-      <a href='/'>
-        <img src={{ image_files.first.path }}>
-      </a>
     </div>
     <div class='menu'>
       <a class='active' href='#'>Illustrations</a>

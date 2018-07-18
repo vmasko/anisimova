@@ -28,7 +28,7 @@ footer {
 .menu {
   text-align: center;
   margin: 0 auto;
-  padding-top: 12px;
+  padding-top: 36px;
 }
 
 .menu a {
@@ -53,12 +53,17 @@ a:hover {
 }
 
 .logo {
-  width: 282px;
+  background-image: url('/assets/images/logo.png');
+  background-size: contain;
+  width: 265px;
+  height: 65px;
   margin: 0 auto;
 }
 
-.logo img {
-  width: 100%;
+@media (-webkit-min-device-pixel-ratio: 2) {
+  .logo {
+    background-image: url('/assets/images/logo@2x.png');
+  }
 }
 
 div {
