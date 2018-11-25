@@ -8,6 +8,10 @@ layout: default
     {{ page.content }}
   </div>
   <div class='col-right'>
-    {{ page.images | markdownify }}
+    {%- if page.galleryImages.size > 0 -%}
+      {%- for image in page.galleryImages -%}
+        <img src='{{image}}'>
+      {%- endfor -%}
+    {%- endif -%}
   </div>
 </div>
