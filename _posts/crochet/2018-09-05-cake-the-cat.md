@@ -16,5 +16,14 @@ images: |-
   ![null](/images/fiona_0602.jpg)
 
   ![null](/images/fiona_3.jpg)
+galleryImages:
+  - /images/fiona_0559.jpg
+  - /images/fiona_0586.jpg
+  - /images/fiona_0589.jpg
+  - /images/fiona_0590.jpg
+  - /images/fiona_0602.jpg
+  - /images/fiona_3.jpg
+tags:
+  - dolls
 ---
 This is lovely Cake the cat, heroine of some episodes of the awesome Adventure Time TV series.
