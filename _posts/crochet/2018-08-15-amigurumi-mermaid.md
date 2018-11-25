@@ -9,11 +9,18 @@ images: |-
 
   ![null](/images/dsc_0031-edit.jpg)
 
-  ![null](/images/dsc_0033-edit.jpg)
-
   ![null](/images/dsc_0034-edit.jpg)
 
+  ![null](/images/dsc_0033-edit.jpg)
+
   ![null](/images/dsc_0041-edit.jpg)
+galleryImages:
+  - /images/dsc_0018-edit-1.jpg
+  - /images/dsc_0031-edit.jpg
+  - /images/dsc_0034-edit.jpg
+  - /images/dsc_0033-edit.jpg
+tags:
+  - dolls
 ---
 This is a new amigurumi mermaid–super-cute sister of my original mermaid I've made a of couple years ago. 
 
