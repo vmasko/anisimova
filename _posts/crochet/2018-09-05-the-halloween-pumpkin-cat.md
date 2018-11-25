@@ -12,5 +12,12 @@ images: |-
   ![null](/images/pumpkin_1233.jpg)
 
   ![null](/images/pumpkin_1235.jpg)
+galleryImages:
+  - /images/pumpkin_1133.jpg
+  - /images/pumpkin_1218.jpg
+  - /images/pumpkin_1233.jpg
+  - /images/pumpkin_1235.jpg
+tags:
+  - dolls
 ---
 This cat is kind of a mixed bag — half a cat, half a pumpkin.
