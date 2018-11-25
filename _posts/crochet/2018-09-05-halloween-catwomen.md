@@ -14,5 +14,13 @@ images: |-
   ![null](/images/catgirl_0487-1.jpg)
 
   ![null](/images/catgirl_0502.jpg)
+galleryImages:
+  - /images/catgirl_0529-1.jpg
+  - /images/catgirl_0481-1.jpg
+  - /images/catgirl_0458.jpg
+  - /images/catgirl_0487-1.jpg
+  - /images/catgirl_0502.jpg
+tags:
+  - dolls
 ---
 A cute catwoman.
