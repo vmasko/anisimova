@@ -19,6 +19,7 @@ collections:
       - {label: "Featured Image", name: "image", widget: "image"}
       - {label: "Images", name: "images", widget: "markdown"}
       - {label: "Body", name: "body", widget: "markdown"}
+      - {label: "Tags", name: "tags", widget: "list"}
 
   - name: "crochet" # Used in routes, e.g., /admin/collections/blog
     label: "Crochet" # Used in the UI
@@ -33,3 +34,4 @@ collections:
       - {label: "Featured Image", name: "image", widget: "image"}
       - {label: "Images", name: "images", widget: "markdown"}
       - {label: "Body", name: "body", widget: "markdown"}
+      - {label: "Tags", name: "tags", widget: "list"}
