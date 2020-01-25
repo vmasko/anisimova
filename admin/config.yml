@@ -16,8 +16,8 @@ collections:
       - {label: "Categories", name: "categories", widget: "hidden", default: "illustrations"}
       - {label: "Title", name: "title", widget: "string"}
       - {label: "Publish Date", name: "date", widget: "datetime"}
-      - {label: "Featured Image", name: "image", widget: "image"}
-      - {label: "Gallery", name: "galleryImages", widget: "list", field: {label: Image, name: image, widget: image}}
+      - {label: "Featured Image", name: "image", widget: "image", media_library: { config: { multiple: true } } }
+      - {label: "Gallery", name: "galleryImages", widget: "list", field: {label: Image, name: image, widget: image, media_library: { config: { multiple: true } } } }
       - {label: "Body", name: "body", widget: "markdown"}
       - {label: "Tags", name: "tags", widget: "list", optional: true}
 
@@ -31,7 +31,7 @@ collections:
       - {label: "Categories", name: "categories", widget: "hidden", default: "crochet"}
       - {label: "Title", name: "title", widget: "string"}
       - {label: "Publish Date", name: "date", widget: "datetime"}
-      - {label: "Featured Image", name: "image", widget: "image"}
-      - {label: "Gallery", name: "galleryImages", widget: "list", field: {label: Image, name: image, widget: image}}
+      - {label: "Featured Image", name: "image", widget: "image", media_library: { config: { multiple: true } } }
+      - {label: "Gallery", name: "galleryImages", widget: "list", field: {label: Image, name: image, widget: image, media_library: { config: { multiple: true } } } }
       - {label: "Body", name: "body", widget: "markdown"}
       - {label: "Tags", name: "tags", widget: "list", optional: true}
