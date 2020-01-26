@@ -2,15 +2,25 @@
 layout: default
 ---
 
-<div class='container'>
+<div class='grid'>
   {%- if site.posts.size > 0 -%}
-    <div class='row'>
-      {%- for post in site.categories.illustrations -%}
-        <a href='{{ post.url | relative_url }}' class='project'>
-          <div class='project-overlay'></div>
-          <img src='{{post.image}}'>
-        </a>
-      {%- endfor -%}
-    </div>
+    <div class="grid-sizer"></div>
+    {%- for post in site.categories.illustrations -%}
+      <!-- <a class='' href='{{ post.url | relative_url }}'></a> -->
+      <div class='grid-item' data-carousel-index='{{forloop.index}}'>
+        <img src='{{post.image}}'>
+      </div>
+    {%- endfor -%}
   {%- endif -%}
 </div>
+
+{%- if site.posts.size > 0 -%}
+<div class="carousel">
+  {%- for post in site.categories.illustrations -%}
+    <div class="carousel-cell">
+      <img class="carousel-cell-image" data-flickity-lazyload="{{post.image}}">
+    </div>
+  {%- endfor -%}
+</div>
+{%- endif -%}
+

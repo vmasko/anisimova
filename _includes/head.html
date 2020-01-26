@@ -2,17 +2,91 @@
   <meta charset="utf-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1">
+
   <script src="https://identity.netlify.com/v1/netlify-identity-widget.js"></script>
+  <script src="https://unpkg.com/masonry-layout@4/dist/masonry.pkgd.min.js"></script>
+  <script src="https://unpkg.com/imagesloaded@4/imagesloaded.pkgd.min.js"></script>
+
+  <link rel="stylesheet" href="https://unpkg.com/flickity@2/dist/flickity.min.css">
+  <script src="https://unpkg.com/flickity@2/dist/flickity.pkgd.min.js"></script>
 
   <script>
+    var carousel, flickity;
+
+    function displayGallery(index) {
+      carousel.style.opacity = 1;
+      carousel.style.pointerEvents = 'all';
+
+      if (index !== undefined) {
+        flickity.select(index, false, true);
+      }
+    }
+
+    function hideGallery() {
+      carousel.style.opacity = 0;
+      carousel.style.pointerEvents = 'none';
+    }
+
+    function handleGridItemClick(event) {
+      var element = event.currentTarget;
+      var index = Number(event.currentTarget.dataset.carouselIndex);
+      displayGallery(index - 1);
+    }
+
+    document.onkeydown = function(evt) {
+      evt = evt || window.event;
+      var isEscape = false;
+
+      if ("key" in evt) {
+        isEscape = (evt.key === "Escape" || evt.key === "Esc");
+      } else {
+        isEscape = (evt.keyCode === 27);
+      }
+
+      if (isEscape) {
+        hideGallery();
+      }
+    };
+
     document.addEventListener('DOMContentLoaded', function() {
       var menuLinks = document.getElementsByClassName('menu')[0]
         .getElementsByTagName('a');
 
       Array.from(menuLinks).forEach(function(link, i) {
-        if (window.location.pathname === link.pathname) {
+        var path = window.location.pathname;
+        if ([path, path.replace(/\/+$/, "")].indexOf(link.pathname) > -1) {
           link.classList.add('active');
         }
+      });
+
+      var gridItems = document.getElementsByClassName('grid-item');
+
+      Array.from(gridItems).forEach(function(item, i) {
+        item.addEventListener('click', handleGridItemClick, false);
+      });
+
+      // ---
+      // Masonry
+      var grid = document.querySelector('.grid');
+
+      var masonry = new Masonry(grid, {
+        itemSelector: '.grid-item',
+        columnWidth: '.grid-sizer',
+        percentPosition: true
+      });
+
+      imagesLoaded(grid).on('progress', function() {
+        masonry.layout();
+      });
+
+      carousel = document.querySelector('.carousel');
+      flickity = new Flickity(carousel, {
+        // options
+        lazyLoad: 2,
+        adaptiveHeight: true,
+        imagesLoaded: true,
+        resize: true,
+        pageDots: false
       });
     });
   </script>
