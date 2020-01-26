@@ -15,12 +15,12 @@ layout: default
 </div>
 
 {%- if site.posts.size > 0 -%}
-<div class="carousel">
-  {%- for post in site.categories.illustrations -%}
-    <div class="carousel-cell">
-      <img class="carousel-cell-image" data-flickity-lazyload="{{post.image}}">
-    </div>
-  {%- endfor -%}
-</div>
+  <div class="carousel">
+    {%- for post in site.categories.illustrations -%}
+      <div class="carousel-cell">
+        <img class="carousel-cell-image" data-flickity-lazyload="{{post.image}}">
+      </div>
+    {%- endfor -%}
+  </div>
 {%- endif -%}
 

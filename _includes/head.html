@@ -62,7 +62,7 @@
       var gridItems = document.getElementsByClassName('grid-item');
 
       Array.from(gridItems).forEach(function(item, i) {
-        item.addEventListener('click', handleGridItemClick, false);
+        // item.addEventListener('click', handleGridItemClick, false);
       });
 
       // ---
@@ -75,7 +75,12 @@
         percentPosition: true
       });
 
-      imagesLoaded(grid).on('progress', function() {
+      var images = document.querySelectorAll('.grid-item');
+      imagesLoaded(images, function() {
+        masonry.layout();
+      });
+
+      imagesLoaded(images).on('progress', function() {
         masonry.layout();
       });
 
