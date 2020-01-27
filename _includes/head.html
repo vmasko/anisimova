@@ -72,15 +72,13 @@
       var masonry = new Masonry(grid, {
         itemSelector: '.grid-item',
         columnWidth: '.grid-sizer',
-        percentPosition: true
+        percentPosition: true,
+        transitionDuration: 0,
+        horizontalOrder: true
       });
 
-      var images = document.querySelectorAll('.grid-item');
-      imagesLoaded(images, function() {
-        masonry.layout();
-      });
-
-      imagesLoaded(images).on('progress', function() {
+      imagesLoaded(grid).on('progress', function() {
+        // layout Masonry after each image loads
         masonry.layout();
       });
 
