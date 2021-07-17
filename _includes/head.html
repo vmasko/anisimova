@@ -53,8 +53,7 @@
     };
 
     document.addEventListener('DOMContentLoaded', function() {
-      var menuLinks = document.getElementsByClassName('menu')[0]
-        .getElementsByTagName('a');
+      var menuLinks = document.getElementsByClassName('menu-item');
 
       Array.from(menuLinks).forEach(function(link, i) {
         var path = window.location.pathname;
