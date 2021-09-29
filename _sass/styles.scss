@@ -23,6 +23,12 @@ body {
   height: calc(100vh);
 }
 
+.home-flex {
+  display: flex;
+  align-content: center;
+  justify-content: center;
+}
+
 .menu-item {
   margin-bottom: 30px;
 }
@@ -52,24 +58,45 @@ body {
   left: 0;
   top: 0;
   height: 100vh;
-  width: 245px;
+  width: 260px;
   padding-top: 50px;
   padding-left: 47px;
 }
 
-.grid {
+.content-container {
   padding-top: 150px;
-  margin-left: 245px;
-  width: calc(100% - 245px);
+  margin-left: 260px;
+  width: calc(100% - 260px - 20px);
+}
+
+.grid {
   height: 100vh;
   overflow-y: scroll;
 }
 
-header {
+.header {
   display: none;
-  height: 100px;
-  padding-top: 50px;
-  padding-left: 47px;
+  justify-content: space-between;
+  align-content: center;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  padding: 25px 25px 15px 25px;
+  z-index: 1;
+  background: rgba(255, 249, 244, 0.8);
+}
+
+.footer {
+  height: 90px;
+  display: none;
+  justify-content: center;
+  align-items: center;
+}
+
+.header .logo {
+  width: 100px;
+  background-repeat: no-repeat;
 }
 
 footer {
@@ -110,12 +137,25 @@ a:hover {
 }
 
 .logo {
-  color: #000;
   display: block;
   background-image: url('/assets/images/logo.svg');
   background-size: contain;
   width: 136px;
   height: 46px;
+}
+
+.menu-button {
+  display: block;
+  background-image: url('/assets/images/i_menu.svg');
+  background-size: contain;
+  background-repeat: no-repeat;
+  width: 30px;
+  height: 30px;
+}
+
+.menu-button.active {
+  background-image: url('/assets/images/i_close.svg');
+  transition: all 0.3s ease-out;
 }
 
 // @media (-webkit-min-device-pixel-ratio: 2) {
@@ -282,6 +322,11 @@ img.lazy.loaded {
 //   opacity: 1;
 // }
 
+@media (max-width: 1024px) {
+  .grid-sizer,
+  .grid-item { width: 50%; }
+}
+
 @media (max-width: 768px) {
   .project {
     width: 46.7%;
@@ -307,7 +352,41 @@ img.lazy.loaded {
   }
 
   .grid-sizer,
-  .grid-item { width: 33.3333%; }
+  .grid-item { width: 100%; }
+}
+
+@media (max-width: 640px) {
+  .sidebar {
+    position: fixed;
+    top: 0;
+    left: -260px;
+    display: block;
+    transition: left 0.3s ease-out;
+  }
+  
+  .sidebar.active {
+    left: 0;
+  }
+
+  .header {
+    display: flex;
+  }
+  
+  .footer {
+    display: flex;
+  }
+
+  .sidebar {
+    z-index: 2;
+    background: #FFF9F4;
+    // display: none;
+  }
+  
+  .content-container {
+    padding-top: 75px;
+    margin-left: 20px;
+    width: calc(100% - 40px);
+  }
 }
 
 @media (max-width: 414px) {
@@ -330,5 +409,5 @@ img.lazy.loaded {
   }
 
   .grid-sizer,
-  .grid-item { width: 50%; }
+  .grid-item { width: 100%; }
 }

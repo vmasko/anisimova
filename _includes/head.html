@@ -54,6 +54,26 @@
 
     document.addEventListener('DOMContentLoaded', function() {
       var menuLinks = document.getElementsByClassName('menu-item');
+      var isMenuDisplayed = false;
+      
+      var menuButton = document.getElementById('js-menu-button');
+      menuButton.addEventListener('click', handleMenuButtonTap, false);
+      
+      function handleMenuButtonTap(event) {
+        if (isMenuDisplayed) {
+          document.getElementById('js-sidebar').classList.remove('active');
+        } else {
+          document.getElementById('js-sidebar').classList.add('active');
+        }
+          
+        if (isMenuDisplayed === true) {
+          menuButton.classList.remove('active')
+        } else {
+          menuButton.classList.add('active')
+        }
+        
+        isMenuDisplayed = !isMenuDisplayed;
+      }
 
       Array.from(menuLinks).forEach(function(link, i) {
         var path = window.location.pathname;
