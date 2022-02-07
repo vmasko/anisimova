@@ -269,7 +269,7 @@ h2 {
   right: 0;
   bottom: 0;
   left: 0;
-  border: 4px solid #FFF9F4;
+  border: 4px solid #FFFCF9;
 }
 
 .grid-sizer,
@@ -388,6 +388,7 @@ img.lazy.loaded {
 
   .header {
     display: flex;
+    padding: 15px 25px 15px 25px;
   }
   
   .footer {
@@ -396,14 +397,19 @@ img.lazy.loaded {
 
   .sidebar {
     z-index: 2;
-    background: #FFF9F4;
+    background: #FFFCF9;
     // display: none;
   }
   
-  .content-container {
+  .content-container, .text-content-container {
     padding-top: 75px;
     margin-left: 20px;
     width: calc(100% - 40px);
+  }
+  
+  .header .logo {
+    opacity: 0;
+    height: 1px;
   }
 }
 
