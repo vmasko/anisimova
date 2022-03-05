@@ -1,0 +1,23 @@
+---
+layout: default
+---
+
+{%- include sidebar.html -%}
+
+<div class='grid content-container'>
+  {%- if site.posts.size > 0 -%}
+    <div class="grid-sizer"></div>
+    {%- for post in site.categories.vector -%}
+      {% assign sizes = post.image_size | split: "x"  %}
+      {% assign padding_bottom = sizes[1] | times: 100.0 | divided_by: sizes[0] %}
+      <!-- <a class='' href='{{ post.url | relative_url }}'></a> -->
+      <div class='grid-item' data-carousel-index='{{forloop.index}}'>
+        <div class="wrapper" style="width: 100%; padding-bottom: {{padding_bottom}}%;">
+          <div class="inner">
+            <img class='lazy' data-src='{{post.image}}'>
+          </div>
+        </div>
+      </div>
+    {%- endfor -%}
+  {%- endif -%}
+</div>
